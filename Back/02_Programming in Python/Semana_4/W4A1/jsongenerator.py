@@ -5,7 +5,7 @@ Declaraciones de importación:
 '''
 ### WRITE IMPORT STATEMENTS HERE
 import json
-from employee import details, employee_name, age,title
+from employeed import details, employee_name, age,title
 
 
 def create_dict(name, age, title):
@@ -26,8 +26,17 @@ def create_dict(name, age, title):
                título - cadena)
     """
     ### WRITE SOLUTION HERE
-    d={"first_name":name,"age":int(age),"title":title}
-    return d
+    try:
+        edad = int(age)
+    except Exception as e:
+        print(e)
+        d = {"first_name":name,"age":"S/D","title":title}
+    else:
+        d={"first_name":name,"age": edad,"title":title}
+    finally:
+        return d
+    
+    
     raise NotImplementedError()
 
 def write_json_to_file(json_obj, output_file):

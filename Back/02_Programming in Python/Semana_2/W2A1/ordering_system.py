@@ -110,13 +110,15 @@ def main():
     order = take_order()
     print_order(order)
 
-    # subtotal = calculate_subtotal(order)
-    # print("Subtotal for the order is: " + str(subtotal))
+    subtotal = calculate_subtotal(order)
+    print("Subtotal for the order is: " + str(subtotal))
 
-    # tax = calculate_tax(subtotal)
-    # print("Tax for the order is: " + str(tax))
+    tax = calculate_tax(subtotal)
+    print("Tax for the order is: " + str(tax))
 
-    # items, subtotal = summarize_order(order)
+    items, subtotal = summarize_order(order)
+    print(subtotal)
+    print(items, subtotal)
 
 if __name__ == "__main__":
     main()
