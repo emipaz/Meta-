@@ -1,0 +1,16 @@
+para instalar jest 
+
+en la carpeta donde esta el js a testear
+
+instalar jest
+
+$ npm install --save-dev jest
+
+despues agregar en package.json en la entrada 
+"scripts": {
+    "test": "jest"
+  },
+
+y despues ejecutar el test con 
+
+$ npm run test
