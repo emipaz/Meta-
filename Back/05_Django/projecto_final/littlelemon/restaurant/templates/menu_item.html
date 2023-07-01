@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <article>
+        <h1>Menu item</h1>
+        <span>
+            <a href="{% url 'home' %}">Home</a> /
+            <a href="{% url 'menu' %}">Menu</a> /
+            {{ menu_item.name }}
+        </span>
+        <!--Begin row-->
+        <div class="row">
+            <!--Begin col-->
+            <div class="column">
+                <h2>
+                    {{ menu_item.name }}
+                </h2>
+                <p>
+                    <!-- there is wrong attribute name in lab descriptiion, step 9. 
+                        It says menu_item_description, but should correspond to the field name in the model -->
+                    {{ menu_item.description }}
+                </p>
+                <p>
+                    ${{ menu_item.price }}.00
+                </p>
+            </div>
+            <!--End col-->
+            <!--Begin col-->
+            <div class="column">
+                <!--
+                    Note: there is error in the last poinf of the Step 9, where they require to provide path for images to be
+                    displayed. STATIC tag shoudl be used to generate correct image path 
+                -->
+                <img src="{% static 'img/menu_items/'%}{{menu_item.name}}.jpg" alt="{{menu_item.name}}" />
+            </div>
+            <!--End col-->
+        </div>
+        <!--End row-->
+    </article>
+</section>
+{% endblock %}
